@@ -1,0 +1,3 @@
+[submodule "CycleGAN"]
+	path = CycleGAN
+	url = https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix

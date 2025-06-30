@@ -1,0 +1,101 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# VS Code (if ever used)
+.vscode/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Pyre type checker
+.pyre/
+
+# mypy
+.mypy_cache/
+
+# Pytype
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Local backups
+*~
+
+# Logs
+*.log
+
+
+/Data/
+/datasets/DiffGAN_Ag_dataset/
+/datasets/DiffGAN_Mill2021_SiO2_dataset/
+/datasets/DiffGAN_Mill2021_TiO2_dataset/
+/datasets/DiffGAN_Ruehle2021_TiO2_dataset/
+/datasets/Test_DiffRenderGAN_Ag/
+/datasets/Test_DiffRenderGANFake_Mill2021SiO2/
+/datasets/Test_DiffRenderGANFake_Mill2021TiO2/
+/datasets/Test_DiffRenderGANFake_Ruehle2021TiO2/
+/wandb/
