@@ -10,7 +10,7 @@ The method and experiments are described in the study accepted in *npj Computati
 > **Journal:** npj Computational Materials  
 > **Authors:** [Dennis Possart, Leonid Mill, Florian Vollnhals, Tor Hildebrand, Peter Suter, Mathis Hoffmann,
 Jonas Utz, Daniel Augsburger, Mareike Thies, Mingxuan Gu, Fabian Wagner, George Sarau, Silke Christiansen, Katharina Breininger]  
-> **DOI:** [Pending]
+> **DOI:** https://doi.org/10.1038/s41524-025-01702-6
 
 This implementation was tested on:
 
@@ -105,7 +105,15 @@ This project is released under the **MIT License**. See the `LICENSE` file for d
 
 If you use this code or pretrained models in your research, please cite our publication:
 
-> [Pending]
+> @article{possart2025addressing,
+>  title={Addressing data scarcity in nanomaterial segmentation networks with differentiable rendering and generative modeling},
+>  author={Possart, Dennis and Mill, Leonid and Vollnhals, Florian and Hildebrand, Tor and Suter, Peter and Hoffmann, Mathis and Utz, Jonas and Augsburger, Daniel and Thies, Mareike and Gu, Mingxuan and others},
+>  journal={npj Computational Materials},
+>  volume={11},
+>  number={1},
+>  pages={197},
+>  year={2025},
+>  publisher={Nature Publishing Group UK London}}
 
 ---
 
