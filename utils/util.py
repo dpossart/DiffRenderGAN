@@ -89,14 +89,14 @@ def create_dataloader(dataset, batch_size, shuffle=True, num_workers=0):
                                        num_workers=num_workers)
 
 
-def crop_and_save_patches(input_dir: str, output_dir: str, patch_size: tuple):
-    """Crop images in the input directory into non-overlapping patches
-    and save them to the output directory.
+def crop_and_save_patches(input_dir: str, output_dir: str, patch_size: tuple, step_size: int):
+    """Crop images in the input directory and save them to the output directory.
 
     Args:
         input_dir: Path to the directory containing input images.
         output_dir: Path to the directory where patches will be saved.
         patch_size: Size of the patches (height, width).
+        step_size: Degree of overlap. Step size between patches.
     """
     # Create the output directory if it doesn't exist
     create_dir(output_dir)
@@ -107,23 +107,24 @@ def crop_and_save_patches(input_dir: str, output_dir: str, patch_size: tuple):
     for file_name in input_files:
         # Read the image
         img_path = os.path.join(input_dir, file_name)
-        crop_img_file(img_path, output_dir, patch_size)
+        crop_img_file(img_path, output_dir, patch_size, step_size)
 
 
-def crop_img_file(img_path, output_dir, patch_size):
-    """Crop an image file into non overlapping patches and save them to a specified output directory.
+def crop_img_file(img_path, output_dir, patch_size, step_size):
+    """Crop an image file into patches and save them to a specified output directory.
 
     Args:
     img_path: Path to the input image file.
     output_dir: Path to the output directory.
     patch_size: Size of the patches (height, width).
+    step_size: Degree of overlap. Step size between patches.
     """
     # Open and convert the image to a Numpy array
     img = Image.open(img_path, 'r')
     img = np.asarray(img)
 
     # Create non-overlapping patches with the specified patch size and overlap
-    patches = patchify(img, patch_size, step=25)
+    patches = patchify(img, patch_size, step=step_size)
 
     # Save each patch as a TIFF image
     for i in range(patches.shape[0]):
