@@ -25,6 +25,7 @@ This implementation was tested on:
 ├── datasets/             # Dataset definitions and utilities
 ├── experiments/          # Pretrained weights and experimental outputs
 ├── model/                # Model architecture 
+├── notebooks/            # Jupyter notebooks for training and testing
 ├── scripts/              # Scripts for training and testing
 ├── utils/                # Helper functions and utilities
 ├── train_gan.py          # Entry point for training
@@ -62,14 +63,15 @@ For details regarding dataset sources and preprocessing pipelines, please refer 
 
 To train DiffRenderGAN, use `train_gan.py`.
 
-Example training scripts illustrating parameter settings are provided in `scripts/train`. See the example scripts and adapt the parameter configuration.
+Example training scripts illustrating parameter settings are provided in `scripts/train`. See the example scripts and adapt the parameter configuration. 
+
+Additionally, a training notebook (`notebooks/train_diffrendergan.ipynb`) is included for convenience and demonstration purposes
 
 For a complete list of configurable arguments, run:
 
 ```
 python train_gan.py --help
 ```
-
 ---
 
 ## Evaluation and Reproduction of Results
@@ -78,19 +80,20 @@ After training, models can be evaluated using `test_gan.py`.
 
 Example testing scripts illustrating are provided in `scripts/test`.
 
+A testing notebook (`notebooks/test_diffrendergan.ipynb`) demonstrates how to load weights, generate synthetic images and masks, and visualize basic results. 
+
 For details on all configurable arguments, run:
 
 ```
 python test_gan.py --help
 ```
-
 ---
 
 ## Planned Releases
 
 We are preparing additional materials that will be released in upcoming updates:
 
-- [ ] Example Jupyter notebooks demonstrating training, evaluation, and synthetic data generation workflows
+- [✔️] Example Jupyter notebooks demonstrating training, evaluation, and synthetic data generation workflows
 - [ ] nnU-Net segmentation results and configuration files corresponding to the experiments in the paper
 
 ---
