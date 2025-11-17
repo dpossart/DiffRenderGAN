@@ -48,7 +48,7 @@ def enforce_cross_pattern_skeleton(skeleton):
     return skeleton_corrected
 
 
-def post_process_shape_mask(shape_mask, dilate, min_mask_size=50):
+def post_process_shape_mask(shape_mask, dilate, min_mask_size):
     """
     Postprocesses render shape mask removing too small instances,
     and optionally dilating contours.
@@ -104,7 +104,9 @@ def test(args):
     n_fakes = args.n_fakes
     rng_seed = args.rng_seed
     dilate = args.dilate
-
+    bg_portion = args.bg_portion
+    bg_contrast = args.max_bg_portion
+    min_mask_size = args.min_mask_size
     set_seed(rng_seed)
 
     with open(f"{CHECKPOINTS_DIR}/{tag}/{tag}.json", 'r') as file:
@@ -137,16 +139,18 @@ def test(args):
             mask = gen.render_mask()
 
             # Ensure portion of background is present in synth images
-            if (np.sum(mask == 0) / mask.size) < 0.15:
+
+            if (np.sum(mask == 0) / mask.size) < bg_portion:
                 continue
 
             mean_particles = np.mean(fake[0][0][mask > 0])
             mean_bg = np.mean(fake[0][0][mask == 0])
 
-            mask = post_process_shape_mask(mask, dilate)
+            mask = post_process_shape_mask(mask, dilate, min_mask_size)
 
             # Remove images were background/particle contrast is missing
-            if mean_bg * 1.15 > mean_particles:
+
+            if mean_bg * bg_contrast > mean_particles:
                 continue
 
             # Save outputs if the condition is met
@@ -168,5 +172,8 @@ if __name__ == '__main__':
     parser.add_argument('--n_fakes', type=int, required=True, help="Number of fakes")
     parser.add_argument('--dilate', type=bool, default=False, help="Dilate mask contour")
     parser.add_argument('--rng_seed', type=int, default=777, help="Random Seed")
+    parser.add_argument('--bg_portion', type=float, default=0.15, help="Random Seed")
+    parser.add_argument('--max_bg_portion', type=float, default=1.15, help="Random Seed")
+    parser.add_argument('--min_mask_size', type=int, default=50, help="Random Seed")
 
     test(parser.parse_args())

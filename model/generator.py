@@ -169,7 +169,7 @@ class Generator(nn.Module):
         init_stage_pos = dr.unravel(mi.Point3f, self.scene_params["stage.vertex_positions"])
         # trafo = mi.Transform4f.translate((30, 0, 0)) # Mitsuba 3.4
         # Reposition stage mesh out of view
-        trafo = mi.Transform4f().translate((30, 0, 0))  # Mitsuba 3.6
+        trafo = mi.Transform4f().translate((600, 0, 0))  # Mitsuba 3.6
         transformed_positions = trafo @ init_stage_pos
         self.scene_params["stage.vertex_positions"] = dr.ravel(transformed_positions)
         self.scene_params.update()

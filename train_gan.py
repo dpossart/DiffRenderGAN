@@ -158,7 +158,8 @@ def train(args):
     Args:
         args (Namespace): Parsed command-line arguments.
     """
-    experiment = wandb.init(project="DiffRenderGAN Paper Experiments", resume="allow", anonymous="must")
+    wandb_tag = args.wandb_tag
+    experiment = wandb.init(project=wandb_tag, resume="allow", anonymous="must")
 
     print_parser_args(args)
     rng_seed = args.rng_seed
@@ -267,6 +268,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter,
                                      description='DiffRenderGAN Training')
     parser.add_argument("--tag", type=str, required=True, help="Experiment tag")
+    parser.add_argument("--wandb_tag", type=str, default='DiffRenderGAN_Experiments', help="Wandb project tag")
 
     # Mesh parameters
     parser.add_argument("--mesh_path", type=str, required=True, help="Path to directory containing mesh files")

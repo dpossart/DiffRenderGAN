@@ -99,3 +99,4 @@ cython_debug/
 /datasets/Test_DiffRenderGANFake_Mill2021TiO2/
 /datasets/Test_DiffRenderGANFake_Ruehle2021TiO2/
 /wandb/
+/notebooks/DiffRenderGAN/
