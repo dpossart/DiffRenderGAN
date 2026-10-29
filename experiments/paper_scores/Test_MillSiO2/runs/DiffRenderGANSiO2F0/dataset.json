@@ -1,0 +1,12 @@
+{
+    "channel_names": {
+        "0": "Grey"
+    },
+    "labels": {
+        "background": 0,
+        "particle": 1,
+        "border": 2
+    },
+    "numTraining": 1200,
+    "file_ending": ".png"
+}
