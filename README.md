@@ -23,7 +23,7 @@ This implementation was tested on:
 .
 ├── CycleGAN/             # CycleGAN components 
 ├── datasets/             # Dataset definitions and utilities
-├── experiments/          # Pretrained weights and experimental outputs
+├── experiments/          # Pretrained weights and paper scores
 ├── model/                # Model architecture 
 ├── notebooks/            # Jupyter notebooks for training and testing
 ├── scripts/              # Scripts for training and testing
@@ -94,7 +94,7 @@ python test_gan.py --help
 We are preparing additional materials that will be released in upcoming updates:
 
 - [✔️] Example Jupyter notebooks demonstrating training, evaluation, and synthetic data generation workflows
-- [ ] nnU-Net segmentation results and configuration files corresponding to the experiments in the paper
+- [✔️] nnU-Net segmentation results and configuration files corresponding to the experiments in the paper
 
 ---
 
